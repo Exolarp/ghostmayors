@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Base styling resets for full-height immersive experiences */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #020202;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: var(--font-sans);
+}
+
+/* Custom styles for glowing border glows and radial grid effects */
+.radial-dark-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(20, 20, 25, 0.8) 0%, rgba(0, 0, 0, 1) 80%);
+}
+
+.mesh-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom animated glowing borders */
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+.glow-border-animate {
+  animation: borderGlow 8s infinite ease-in-out;
+}
+
+/* Custom scrollbar styling for control drawers */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Equalizer keyframe animations */
+@keyframes musicBar1 {
+  0%, 100% { height: 30%; }
+  50% { height: 90%; }
+}
+@keyframes musicBar2 {
+  0%, 100% { height: 100%; }
+  50% { height: 40%; }
+}
+@keyframes musicBar3 {
+  0%, 100% { height: 50%; }
+  50% { height: 85%; }
+}
+
+.animate-music-bar-1 {
+  animation: musicBar1 0.8s ease-in-out infinite;
+}
+.animate-music-bar-2 {
+  animation: musicBar2 1.2s ease-in-out infinite;
+}
+.animate-music-bar-3 {
+  animation: musicBar3 0.9s ease-in-out infinite;
+}
+
